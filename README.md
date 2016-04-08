@@ -7,8 +7,7 @@ and one that is trained using one or more GPGPUs (written in CUDA), then prove t
 can offer
 
 <h2> What to expect </h2>
-This repo only contains the serial version which served as a benchmark for the CUDA version. The CUDA
-code may or may not be uploaded in the future.
+This branch contains the CUDA version which was benchmarked against the serial one.
 I am aware of the many design and performance flaws of the current project and do not intend to 
 spend more time on it for now. However i will maintain this repo primarily for personal reasons
 (this is the first serious programming project i developed as a student, i would like to remember it).
@@ -19,14 +18,12 @@ The training set was downloaded from the <a href="http://yann.lecun.com/exdb/mni
 It consists of 60.000 sample images and their respective labels. Each image shows a digit ranging from 0-9.
 
 <h2> Result </h2>
-The network is capable of correctly predicting more than 90% even on unknown data 
-(image samples that were not used during training phase) when training with more than 20000 images.
-This should take 5-10 minutes on any modern CPU.
+The network is capable of correctly predicting more than 90% (similarily to the serial version).
+However training is now accerelated. Observations when running on NVIDIA GTX 750 showed a speed up of 
+more than 10x (training in a matter of seconds as opposed to 5+ minutes needed for the serial version).
 
 <h2> How to use it </h2>
-Unfortunately my make file has gone missing (this project was developed at 2013, 
-at the time i didnt even know what Git is). I will try to upload an easy to use makefile, until then
-anyone can manually compile and link everything, then supply the datasets as input args.
-
+Clone the project on a new directory, make sure the script "run.sh" is executable
+(for example you can run chmod u+x run.sh) and run it.
 
 
