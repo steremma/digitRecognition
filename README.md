@@ -7,8 +7,7 @@ and one that is trained using one or more GPGPUs (written in CUDA), then prove t
 can offer
 
 <h2> What to expect </h2>
-This repo only contains the serial version which served as a benchmark for the CUDA version. The CUDA
-code may or may not be uploaded in the future.
+This repo only contains the serial version which served as a benchmark for the CUDA version.
 I am aware of the many design and performance flaws of the current project and do not intend to 
 spend more time on it for now. However i will maintain this repo primarily for personal reasons
 (this is the first serious programming project i developed as a student, i would like to remember it).
