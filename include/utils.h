@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <fstream>
 #include <vector>
+#include "image.h"
 
 namespace utils {
 
@@ -13,7 +14,7 @@ namespace utils {
     /*
 	* Add documentation
 	*/
-	std::vector<imageSample> read_image(std::string image_path);
+	std::vector<Image> read_image(std::string image_path);
 
     /*
 	* Add documentation

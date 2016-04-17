@@ -1,4 +1,8 @@
-"include neuralNetwork.h"
+#include "neuralNetwork.h"
+#define ACTIVATION_RESPONSE 1
+#define LEARNING_RATE 0.1
+#define BATCH_SIZE 5
+
 using namespace std;
 
 
@@ -146,8 +150,8 @@ int NeuralNetwork::predict(Image image){
   int i,index;
   double max = 0;
   for(i=0;i<10;i++){
-    if (vecLayer[NUM_OF_HIDDEN_LAYERS+1].myNeurons[i].get_value() > max) {
-      max = vecLayer[NUM_OF_HIDDEN_LAYERS+1].myNeurons[i].get_value();
+    if (vecLayer[numHiddenLayers+1].myNeurons[i].get_value() > max) {
+      max = vecLayer[numHiddenLayers+1].myNeurons[i].get_value();
       index = i;
     }
     
@@ -190,7 +194,6 @@ void NeuralNetwork::backPropagation(int label,int image_count){
 
 void NeuralNetwork::updateWeights(){
   int i;
-  cout << " mpika " << endl;
   for(int this_layer=1;this_layer<numHiddenLayers+2;this_layer++) {
       for(int this_n=0; this_n<vecLayer[this_layer].numNeurons;this_n++) {
 		int prev_n;

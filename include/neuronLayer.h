@@ -1,4 +1,4 @@
-
+#include "neuron.h"
 
 #ifndef NEURON_LAYER_H
 #define NEURON_LAYER_H

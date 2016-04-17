@@ -15,7 +15,7 @@ namespace utils {
 		return ((int)c1 << 24) + ((int)c2 << 16) + ((int)c3 << 8) + c4;
 	}
 
-	vector<imageSample> read_image(string image_path)
+	vector<Image> read_image(string image_path)
 	{
 		ifstream file (image_path.c_str());
 		if (file.is_open())
@@ -32,12 +32,12 @@ namespace utils {
 		    n_rows= reverseInt(n_rows);
 		    file.read((char*)&n_cols,sizeof(n_cols));
 		    n_cols= reverseInt(n_cols);
-		vector<imageSample> dataSet(number_of_images);
+		vector<Image> dataSet(number_of_images);
 		unsigned char temp;
 		int value;
 		    for(int i=0;i<number_of_images;++i)
 		    {
-			imageSample temp_image = imageSample(n_rows,n_cols);
+			Image temp_image = Image(n_rows,n_cols);
 		        for(int j=0;j<n_rows*n_cols;++j)
 		        {
 			  temp = 0;

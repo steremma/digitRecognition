@@ -1,4 +1,6 @@
 #include "image.h"
+#include "neuronLayer.h"
+#include <math.h>
 
 #ifndef NEURAL_NETWORK_H
 #define NEURAL_NETWORK_H

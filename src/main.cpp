@@ -1,26 +1,33 @@
-#include "NeuralNetwork.h"
+#include "neuralNetwork.h"
 #include "image.h"
-#include <ctime>
-#include "Neuron.h"
-#include "NeuronLayer.h"
+#include <time.h>
+#include <sys/time.h>
+#include "neuron.h"
+#include "neuronLayer.h"
+#include "utils.h"
+#define NUM_OF_HIDDEN_LAYERS 2
+#define BATCH_SIZE 5
+
+using namespace std;
 
 struct timeval startwtime, endwtime;
 double seq_time;
 
 int main(int argc, char *argv[]) {
     
-  if(argc != 3)
-  { cout << "Enter the training set image_path and the label_path\n"; exit(1); }
+  if(argc != 3) {
+	 cout << "Enter the training set image_path and the label_path\n"; exit(1); 
+  }
   string image_path = argv[1];
   string label_path = argv[2];
-  vector<imageSample> imageSet = read_image(image_path);
-  int* labelSet = read_label(label_path);	  
+  vector<Image> imageSet = utils::read_image(image_path);
+  int* labelSet = utils::read_label(label_path);	  
   NeuralNetwork test(imageSet[0].get_size(),10,NUM_OF_HIDDEN_LAYERS,imageSet[0].get_size());
   
-  cout << "Training begins now with batch size: "<<BATCH_SIZE << " for 20 epochs "<<endl;
+  cout << "Training begins now with batch size: "<< BATCH_SIZE << " for 20 epochs "<<endl;
   gettimeofday (&startwtime, NULL);
   
-  for(int j=0;j<500*BATCH_SIZE;j++){
+  for(int j=0;j<1000*BATCH_SIZE;j++){
     test.forwardPropagation(imageSet[j]);
     test.backPropagation(labelSet[j],j+1);
   }

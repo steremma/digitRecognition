@@ -1,4 +1,4 @@
-#include <math.h>
+#include <stdlib.h>
 
 #ifndef NEURON_H
 #define NEURON_H
