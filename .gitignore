@@ -1,2 +1,3 @@
 # Ignore platform specific build files
-build/
+build/*
+!build/README.md
