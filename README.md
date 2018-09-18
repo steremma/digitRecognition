@@ -1,10 +1,10 @@
 <h1> Digit Recognition using Neural Networks </h1>
 
 This program presents a Neural Network capable of recognizing hand written digits.
-The project was developed for one of my student projects namely Parallel computing. 
+The project was developed for one of my student projects namely Parallel computing, along with [Michael](https://github.com/MichaelPerdika). 
 The goal is to create 2 version of a neural network, one that is trained serially (written in C++)
 and one that is trained using one or more GPGPUs (written in CUDA), then prove the accerelation that HPC 
-offers.
+offers. The CUDA version can be found on the respective branch.
 
 <h2> What to expect </h2>
 This repo contains 2 branches, one for each version of the code. The serial version exists primarily for
